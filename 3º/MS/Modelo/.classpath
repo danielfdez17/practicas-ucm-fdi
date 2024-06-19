@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding=".apt_generated/|lib/|src/|build/" kind="src" path=""/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path=".apt_generated">
+		<attributes>
+			<attribute name="optional" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/eclipselink.jar"/>
+	<classpathentry kind="lib" path="lib/jakarta.annotation-api.jar"/>
+	<classpathentry kind="lib" path="lib/jakarta.persistence-api.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.persistence.jpa.modelgen.processor.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.persistence.jpars.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
