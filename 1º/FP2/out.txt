@@ -1,0 +1,6 @@
+bbb ddd aaa eee ccc 
+ddd bbb ccc aaa eee 
+ccc eee aaa bbb ddd 
+tt ddd uuuu fffff 
+uuuu ddd fffff tt 
+uuuu ddd fffff tt 

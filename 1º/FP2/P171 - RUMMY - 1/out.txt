@@ -1,0 +1,11 @@
+Bolsa...
+rojo 1  rojo 2  rojo 3  rojo 4  rojo 5  rojo 6  rojo 7  rojo 8  
+verd 1  verd 2  verd 3  verd 4  verd 5  verd 6  verd 7  verd 8  
+azul 1  azul 2  azul 3  azul 4  azul 5  azul 6  azul 7  azul 8  
+amar 1  amar 2  amar 3  amar 4  amar 5  amar 6  amar 7  amar 8  
+rojo 1  rojo 2  rojo 3  rojo 4  rojo 5  rojo 6  rojo 7  rojo 8  
+verd 1  verd 2  verd 3  verd 4  verd 5  verd 6  verd 7  verd 8  
+azul 1  azul 2  azul 3  azul 4  azul 5  azul 6  azul 7  azul 8  
+amar 1  amar 2  amar 3  amar 4  amar 5  amar 6  amar 7  amar 8  
+
+Repartir fichas

@@ -1,0 +1,71 @@
+Bolsa...
+rojo 1  rojo 2  rojo 3  rojo 4  rojo 5  rojo 6  rojo 7  rojo 8  
+verd 1  verd 2  verd 3  verd 4  verd 5  verd 6  verd 7  verd 8  
+azul 1  azul 2  azul 3  azul 4  azul 5  azul 6  azul 7  azul 8  
+amar 1  amar 2  amar 3  amar 4  amar 5  amar 6  amar 7  amar 8  
+rojo 1  rojo 2  rojo 3  rojo 4  rojo 5  rojo 6  rojo 7  rojo 8  
+verd 1  verd 2  verd 3  verd 4  verd 5  verd 6  verd 7  verd 8  
+azul 1  azul 2  azul 3  azul 4  azul 5  azul 6  azul 7  azul 8  
+amar 1  amar 2  amar 3  amar 4  amar 5  amar 6  amar 7  amar 8  
+
+Fichas de la bolsa con todas las fichas repartidas
+
+Bolsa...
+rojo 1  rojo 2  rojo 3  rojo 4  rojo 5  rojo 6  rojo 7  rojo 8  
+verd 1      -1      -1      -1      -1      -1      -1  verd 8  
+azul 1  azul 2      -1      -1      -1      -1      -1      -1  
+amar 1  amar 2  amar 3  amar 4  amar 5  amar 6  amar 7  amar 8  
+rojo 1  rojo 2  rojo 3  rojo 4  rojo 5  rojo 6  rojo 7  rojo 8  
+verd 1  verd 2  verd 3  verd 4  verd 5  verd 6  verd 7  verd 8  
+azul 1  azul 2  azul 3  azul 4  azul 5  azul 6  azul 7  azul 8  
+amar 1  amar 2  amar 3  amar 4  amar 5  amar 6  amar 7  amar 8  
+
+Turno para el jugador 2 ...
+Soporte: azul 3  azul 4  azul 5  azul 6  azul 7  azul 8  
+
+1: Ordenar por num., 2: Ordenar por color, 3: Sugerir, 4: Poner, 0: Fin >>>  3
+azul 3  azul 4  azul 5  azul 6  azul 7  azul 8  
+Soporte: azul 3  azul 4  azul 5  azul 6  azul 7  azul 8  
+
+1: Ordenar por num., 2: Ordenar por color, 3: Sugerir, 4: Poner, 0: Fin >>>  4
+Soporte: azul 3  azul 4  azul 5  azul 6  azul 7  azul 8  
+              1       2       3       4       5       6
+
+	Fichas (0 al final): 1 2 3 4 0 
+Jugada: azul 3  azul 4  azul 5  azul 6   - Escalera correcta!
+
+Tablero:
+ 1: azul 3  azul 4  azul 5  azul 6  
+
+
+Soporte: azul 7  azul 8  
+
+1: Ordenar por num., 2: Ordenar por color, 3: Sugerir, 4: Poner, 0: Fin >>>  4
+Soporte: azul 7  azul 8  
+              1       2
+
+	Fichas (0 al final): 1 0 
+Jugada: azul 7  
+Jugadas del tablero donde poner la ficha: 1  -> Colocada!
+
+Tablero:
+ 1: azul 3  azul 4  azul 5  azul 6  azul 7  
+
+
+Soporte: azul 8  
+
+1: Ordenar por num., 2: Ordenar por color, 3: Sugerir, 4: Poner, 0: Fin >>>  4
+Soporte: azul 8  
+              1
+
+	Fichas (0 al final): 1 0 
+Jugada: azul 8  
+Jugadas del tablero donde poner la ficha: 1  -> Colocada!
+
+Tablero:
+ 1: azul 3  azul 4  azul 5  azul 6  azul 7  azul 8  
+
+
+Soporte: 
+
+El jugador 2 ha ganado!

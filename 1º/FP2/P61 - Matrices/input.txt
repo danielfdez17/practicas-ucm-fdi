@@ -1,0 +1,33 @@
+3 4
+4 1 2 3
+6 7 8 5
+0 0 0 0
+3
+rotarFila 2
+rotarFila -1
+rotarCol 4
+5 5
+1 2 3 4 5
+1 2 3 4 5
+1 2 3 4 5
+1 2 3 4 5
+1 2 3 4 5
+5
+rotarFila 1
+rotarFila 2
+rotarFila 3
+rotarFila 4
+rotarFila 5
+5 5
+1 1 1 1 1
+2 2 2 2 2
+3 3 3 3 3
+4 4 4 4 4
+5 5 5 5 5
+5
+rotarCol 1
+rotarCol 2
+rotarCol 3
+rotarCol 4
+rotarCol 5
+0 0

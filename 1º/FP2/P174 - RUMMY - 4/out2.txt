@@ -1,0 +1,144 @@
+Bolsa...
+rojo 1  rojo 2  rojo 3  rojo 4  rojo 5  rojo 6  rojo 7  rojo 8  rojo 9  
+verd 1  verd 2  verd 3  verd 4  verd 5  verd 6  verd 7  verd 8  verd 9  
+azul 1  azul 2  azul 3  azul 4  azul 5  azul 6  azul 7  azul 8  azul 9  
+amar 1  amar 2  amar 3  amar 4  amar 5  amar 6  amar 7  amar 8  amar 9  
+rojo 1  rojo 2  rojo 3  rojo 4  rojo 5  rojo 6  rojo 7  rojo 8  rojo 9  
+verd 1  verd 2  verd 3  verd 4  verd 5  verd 6  verd 7  verd 8  verd 9  
+azul 1  azul 2  azul 3  azul 4  azul 5  azul 6  azul 7  azul 8  azul 9  
+amar 1  amar 2  amar 3  amar 4  amar 5  amar 6  amar 7  amar 8  amar 9  
+
+Fichas de la bolsa con todas las fichas repartidas
+
+Bolsa...
+rojo 1  rojo 2  rojo 3  rojo 4  rojo 5  rojo 6  rojo 7  rojo 8  rojo 9  
+verd 1      -1      -1      -1      -1      -1      -1      -1      -1  
+    -1      -1      -1      -1      -1      -1      -1      -1      -1  
+    -1      -1      -1      -1      -1      -1      -1      -1      -1  
+    -1      -1      -1      -1      -1      -1      -1  rojo 8  rojo 9  
+verd 1  verd 2  verd 3  verd 4  verd 5  verd 6  verd 7  verd 8  verd 9  
+azul 1  azul 2  azul 3  azul 4  azul 5  azul 6  azul 7  azul 8  azul 9  
+amar 1  amar 2  amar 3  amar 4  amar 5  amar 6  amar 7  amar 8  amar 9  
+
+Turno para el jugador 2 ...
+Soporte: azul 4  azul 5  azul 6  azul 7  azul 8  azul 9  amar 1  amar 2  amar 3  amar 4  amar 5  
+
+1: Ordenar por num., 2: Ordenar por color, 3: Sugerir, 4: Poner, 0: Fin >>>  3
+azul 4  azul 5  azul 6  azul 7  azul 8  azul 9  
+amar 1  amar 2  amar 3  amar 4  amar 5  
+Soporte: azul 4  azul 5  azul 6  azul 7  azul 8  azul 9  amar 1  amar 2  amar 3  amar 4  amar 5  
+
+1: Ordenar por num., 2: Ordenar por color, 3: Sugerir, 4: Poner, 0: Fin >>>  4
+Soporte: azul 4  azul 5  azul 6  azul 7  azul 8  azul 9  amar 1  amar 2  amar 3  amar 4  amar 5  
+              1       2       3       4       5       6       7       8       9      10      11
+
+	Fichas (0 al final): 1 2 3 4 0 
+Jugada: azul 4  azul 5  azul 6  azul 7   - Escalera correcta!
+
+Tablero:
+ 1: azul 4  azul 5  azul 6  azul 7  
+
+
+Soporte: azul 8  azul 9  amar 1  amar 2  amar 3  amar 4  amar 5  
+
+1: Ordenar por num., 2: Ordenar por color, 3: Sugerir, 4: Poner, 0: Fin >>>  4
+Soporte: azul 8  azul 9  amar 1  amar 2  amar 3  amar 4  amar 5  
+              1       2       3       4       5       6       7
+
+	Fichas (0 al final): 1 0 
+Jugada: azul 8  
+Jugadas del tablero donde poner la ficha: 1  -> Colocada!
+
+Tablero:
+ 1: azul 4  azul 5  azul 6  azul 7  azul 8  
+
+
+Soporte: azul 9  amar 1  amar 2  amar 3  amar 4  amar 5  
+
+1: Ordenar por num., 2: Ordenar por color, 3: Sugerir, 4: Poner, 0: Fin >>>  4
+Soporte: azul 9  amar 1  amar 2  amar 3  amar 4  amar 5  
+              1       2       3       4       5       6
+
+	Fichas (0 al final): 1 0 
+Jugada: azul 9  
+Jugadas del tablero donde poner la ficha: 1  -> Colocada!
+
+Tablero:
+ 1: azul 4  azul 5  azul 6  azul 7  azul 8  azul 9  
+
+
+Soporte: amar 1  amar 2  amar 3  amar 4  amar 5  
+
+1: Ordenar por num., 2: Ordenar por color, 3: Sugerir, 4: Poner, 0: Fin >>>  0
+
+Turno para el jugador 3 ...
+Soporte: amar 6  amar 7  amar 8  amar 9  rojo 1  rojo 2  rojo 3  rojo 4  rojo 5  rojo 6  rojo 7  
+
+1: Ordenar por num., 2: Ordenar por color, 3: Sugerir, 4: Poner, 0: Fin >>>  3
+rojo 1  rojo 2  rojo 3  rojo 4  rojo 5  rojo 6  rojo 7  
+amar 6  amar 7  amar 8  amar 9  
+Soporte: rojo 1  rojo 2  rojo 3  rojo 4  rojo 5  rojo 6  rojo 7  amar 6  amar 7  amar 8  amar 9  
+
+1: Ordenar por num., 2: Ordenar por color, 3: Sugerir, 4: Poner, 0: Fin >>>  4
+Soporte: rojo 1  rojo 2  rojo 3  rojo 4  rojo 5  rojo 6  rojo 7  amar 6  amar 7  amar 8  amar 9  
+              1       2       3       4       5       6       7       8       9      10      11
+
+	Fichas (0 al final): 1 2 3 4 0 
+Jugada: rojo 1  rojo 2  rojo 3  rojo 4   - Escalera correcta!
+
+Tablero:
+ 1: azul 4  azul 5  azul 6  azul 7  azul 8  azul 9  
+ 2: rojo 1  rojo 2  rojo 3  rojo 4  
+
+
+Soporte: rojo 5  rojo 6  rojo 7  amar 6  amar 7  amar 8  amar 9  
+
+1: Ordenar por num., 2: Ordenar por color, 3: Sugerir, 4: Poner, 0: Fin >>>  4
+Soporte: rojo 5  rojo 6  rojo 7  amar 6  amar 7  amar 8  amar 9  
+              1       2       3       4       5       6       7
+
+	Fichas (0 al final): 1 2 3 0 
+Jugada: rojo 5  rojo 6  rojo 7   - Escalera correcta!
+
+Tablero:
+ 1: azul 4  azul 5  azul 6  azul 7  azul 8  azul 9  
+ 2: rojo 1  rojo 2  rojo 3  rojo 4  
+ 3: rojo 5  rojo 6  rojo 7  
+
+
+Soporte: amar 6  amar 7  amar 8  amar 9  
+
+1: Ordenar por num., 2: Ordenar por color, 3: Sugerir, 4: Poner, 0: Fin >>>  4
+Soporte: amar 6  amar 7  amar 8  amar 9  
+              1       2       3       4
+
+	Fichas (0 al final): 1 2 3 0 
+Jugada: amar 6  amar 7  amar 8   - Escalera correcta!
+
+Tablero:
+ 1: azul 4  azul 5  azul 6  azul 7  azul 8  azul 9  
+ 2: rojo 1  rojo 2  rojo 3  rojo 4  
+ 3: rojo 5  rojo 6  rojo 7  
+ 4: amar 6  amar 7  amar 8  
+
+
+Soporte: amar 9  
+
+1: Ordenar por num., 2: Ordenar por color, 3: Sugerir, 4: Poner, 0: Fin >>>  4
+Soporte: amar 9  
+              1
+
+	Fichas (0 al final): 1 0 
+Jugada: amar 9  
+Jugadas del tablero donde poner la ficha: 4  -> Colocada!
+
+Tablero:
+ 1: azul 4  azul 5  azul 6  azul 7  azul 8  azul 9  
+ 2: rojo 1  rojo 2  rojo 3  rojo 4  
+ 3: rojo 5  rojo 6  rojo 7  
+ 4: amar 6  amar 7  amar 8  amar 9  
+
+
+Soporte: 
+
+El jugador 3 ha ganado!
