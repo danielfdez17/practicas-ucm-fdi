@@ -1,0 +1,164 @@
+// PROBLEMA 4 - FUMADORES
+bool ingr[3] = {false, false, false}; // tabaco, cerillas, papel
+mutex_t mutex;
+cont_t vc;
+
+void Agente() {
+    while (true) {
+        int i = random(0, 2) % 3;
+        int j = random(0, 2) % 3;
+        while (j == i) { j = random(0, 2) % 3; }
+        pthread_mutex_lock(&mutex);
+        while (ingr[0] || ingr[1] || ingr[2]) {
+            pthread_cond_wait(&vc, &mutex);
+        }
+        ingr[0] = (i == 0 || j == 0);
+        ingr[1] = (i == 1 || j == 1);
+        ingr[2] = (i == 2 || j == 2);
+        pthread_cond_broadcast(&vc);
+        pthread_mutex_unlock(&mutex);
+    }
+}
+void Papel() {
+    while (true) {
+        pthread_mutex_lock(&mutex);
+        while (!ingr[0] || !ingr[1]) {
+            pthread_cond_wait(&vc, &mutex);
+        }
+        ingr[0] = false;
+        ingr[1] = false;
+        ingr[2] = false;
+        pthread_cond_broadcast(&vc);
+        pthread_mutex_unlock(&mutex);
+    }
+}
+// PROBLEMA 5 - UNA TRIBU DE SALVAJES
+#define M 5
+mutex_t mutex;
+cont_t vacio;
+int servicios = 0;
+
+void Salvaje() {
+    while (true) {
+        pthread_mutex_lock(&mutex);
+        while (servicios == 0) {
+            pthread_cond_signal(&vacio);
+            pthread_cond_wait(&vacio, &mutex);
+        }
+        servicios--;
+        pthread_mutex_unlock(&mutex);
+        eat();
+    }
+}
+void Cocinero() {
+    while (true) {
+        pthread_mutex_lock(&mutex);
+        while (servicios > 0) {
+            pthread_cond_wait(&vacio, &mutex);
+        }
+        servicios = M;
+        pthread_cond_broadcast(&vacio);
+        pthread_mutex_unlock(&mutex);
+    }
+}
+
+// PROBLEMA 2 - PARES-IMPARES
+#define M 1000
+#define PARES 0
+#define IMPARES 1
+#define CONSUMIDOR 2
+mutex_t mutex;
+cont_t vcConsumidor, vcPares, vcImpares;
+int num;
+int turno; // pares = 0, impares = 1, consumidor = 2
+void Pares() { // Impares()
+    for (int i = 2; i < M; i+= 2) { // i = 1
+        pthread_mutex_lock(&mutex);
+        while (turno != 0) { // turno != 1
+            pthread_cond_wait(&vcPares, &mutex); // &vcImpares
+        }
+        num = i;
+        turno = CONSUMIDOR;
+        pthread_cond_signal(&vcConsumidor);
+        pthread_mutex_unlock(&mutex);
+    }
+}
+void Consumidor() {
+    while (true) {
+        pthread_mutex_lock(&mutex);
+        while (turno != 2) {
+            pthread_cond_wait(&vcConsumidor, &mutex);
+        }
+        printf("%d\n", num);
+        if (num % 2 == 0) {
+            turno = IMPARES;
+            pthread_cond_signal(&vcImpares, &mutex);
+        }
+        else {
+            turno = PARES;
+            pthread_cond_signal(&vcPares, &mutex);
+        }
+        pthread_mutex_unlock(&mutex);
+    }
+}
+
+// PROBLEMA 6 - GASOLINERA
+#define LIBRE 1
+#define OCUPADO 0
+#define M 2
+sem_t mutex, gasolinera;
+sem_init(&mutex, 0, 1); // mutex
+sem_init(&gasolinera, 0, M); // cola de espera
+int surtidores[M] = {1,1} // libre = 1, ocupado = 0
+void cliente(int dinero) {
+    int surtidor;
+    sem_wait(&gasolinera);
+    sem_wait(&mutex);
+    surtidor = (surtidores[0] == LIBRE) ? 0 : 1;
+    sem_post(&mutex);
+    
+    servirCombustible(surtidor, dinero);
+    
+    sem_wait(&mutex);
+    surtidores[surtidor] = LIBRE;
+    sem_post(&mutex);
+    sem_post(&gasolinera);
+}
+
+// PROBLEMA 3 - SEMAFOROS CON CERROJOS Y VARIABLES DE CONDICION
+struct sem_t {
+    int valor;
+    mutext_t mutex;
+    cond_t vc;
+}
+void init(sem_t* sem, int val) {
+    sem->val = val;
+    pthread_mutex_init(sem->mutex);
+    pthread_cond_init(sem->vc);
+}
+sem_t *crear_semaforo (int valor_inicial) {
+    if (valor_inicial < 0) return NULL;
+
+    sem_t *sem = malloc(sizeof(sem_t));
+    pthread_mutex_init(sem->mutex, NULL);
+    pthread_cond_init(sem->vc, NULL);
+    sem->valor = valor_inicial;
+    return sem;
+}
+void wait(sem_t* sem) {
+        pthread_mutex_lock(sem->mutex);
+        while (sem->val == 0) {
+            pthread_cond_wait(sem->vc, sem->mutex);
+        }
+        sem->val--;
+        pthread_mutex_unlock(sem->mutex);
+}
+void post(sem_t* sem) {
+        pthread_mutex_lock(sem->mutex);
+        if (sem->valor == 0) {
+            pthread_cond_signal(sem->vc, sem->mutex);
+        }
+        sem->val++;
+        pthread_cond_signal(sem->vc);
+        pthread_mutex_unlock(sem->mutex);
+}
