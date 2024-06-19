@@ -1,0 +1,14 @@
+CREATE SEQUENCE SEC_T1
+  MINVALUE 0
+  MAXVALUE 1
+  START WITH 0
+  INCREMENT BY 1
+  CYCLE
+  NOCACHE;
+
+
+-- ! Ejecucion / Prueba
+
+SELECT SEC_T1.NEXTVAL FROM DUAL; -- * Aparece el valor 0
+SELECT SEC_T1.NEXTVAL FROM DUAL; -- * Aparece el valor 1
+SELECT SEC_T1.NEXTVAL FROM DUAL; -- * Aparece el valor 0

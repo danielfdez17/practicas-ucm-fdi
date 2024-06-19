@@ -1,0 +1,20 @@
+G1: Busca mantener la comision aunque haya ROLLBACK esto ya se da porque usamos un PRAGMA AUTONOMOUS_TRANSACTION 
+    Que es independiente de la transaccion principal
+
+g.1: para no anular la comision, aun haciendo rollback, lo unico que hay que hacer es añadir la sentencia PRAGMA AUTONOMOUS_TRANSACTION, lo que provoca que cada iteracion sea independiente
+
+G2: En ORACLE 11 existe PRECEDES OR FOLLOWS
+
+-> PRECEDES: Se usa para indicar que el trigger actual debe ejecutarse antes que otro trigger especificado.
+   En nuestra practica se ejecutaria primero prac32 y luego tr_anterior.
+
+-> FOLLOWS: Se usa para indicar que el trigger actual debe ejecutarse después que otro trigger especificado.
+   En nuestra practica se ejecutaria primero tr_anterior y luego prac32.
+
+g.2: En ORACLE 11 se puede establecer el orden en el que se ejecutan los triggers
+
+  - Sentencia PRECEDES: Indica que un trigger debe ejecutarse antes que otro trigger especificado.
+   En este caso, tr_anterior se ejecutará antes que prac32.
+
+  - Sentencia FOLLOWS: Indica que un trigger debe ejecutarse después que otro trigger especificado.
+   En este caso, pract32 se ejecutará después que tr_anterior.

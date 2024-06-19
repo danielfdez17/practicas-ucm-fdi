@@ -1,0 +1,72 @@
+La secuencia secuencia_Empresa 11 ya exist¿a, no se ha creado ninguna secuencia.
+La tabla inversiones_Empresa 11 ya exist¿a, no se ha creado ninguna tabla.
+Sale por una excepcion: -2291  -- ORA-02291: integrity constraint (ABD1003.SYS_C0025246) violated - parent key not found
+ORA-06512: at
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Empresa 11           -- 00000002 -- 110007  -- bono1       -- GreenFri
+La secuencia secuencia_Empresa 22 ya exist¿a, no se ha creado ninguna secuencia.
+La tabla inversiones_Empresa 22 ya exist¿a, no se ha creado ninguna tabla.
+Sale por una excepcion: -2291  -- ORA-02291: integrity constraint (ABD1003.SYS_C0025246) violated - parent key not found
+ORA-06512: at
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Empresa 22           -- 00000002 -- 220007  -- bono2       -- GreenFri
+La secuencia secuencia_Empresa 33 ya exist¿a, no se ha creado ninguna secuencia.
+La tabla inversiones_Empresa 33 ya exist¿a, no se ha creado ninguna tabla.
+Sale por una excepcion: -2291  -- ORA-02291: integrity constraint (ABD1003.SYS_C0025246) violated - parent key not found
+ORA-06512: at
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Empresa 33           -- 00000002 -- 330007  -- bono3       -- 
+La secuencia secuencia_Empresa 44 ya exist¿a, no se ha creado ninguna secuencia.
+La tabla inversiones_Empresa 44 ya exist¿a, no se ha creado ninguna tabla.
+Sale por una excepcion: -2291  -- ORA-02291: integrity constraint (ABD1003.SYS_C0025246) violated - parent key not found
+ORA-06512: at
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Empresa 44           -- 00000002 -- 440007  -- bono4       -- 
+La secuencia secuencia_Empresa 55 ya exist¿a, no se ha creado ninguna secuencia.
+La tabla inversiones_Empresa 55 ya exist¿a, no se ha creado ninguna tabla.
+Sale por una excepcion: -2291  -- ORA-02291: integrity constraint (ABD1003.SYS_C0025246) violated - parent key not found
+ORA-06512: at
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Empresa 55           -- 00000002 -- 550007  -- bono5       -- BlackFri
+La secuencia secuencia_Empresa 55 ya exist¿a, no se ha creado ninguna secuencia.
+La tabla inversiones_Empresa 55 ya exist¿a, no se ha creado ninguna tabla.
+Sale por una excepcion: -2291  -- ORA-02291: integrity constraint (ABD1003.SYS_C0025246) violated - parent key not found
+ORA-06512: at
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Empresa 55           -- 00000002 -- 520007  -- bono2       -- 
+La secuencia secuencia_Empresa 55 ya exist¿a, no se ha creado ninguna secuencia.
+La tabla inversiones_Empresa 55 ya exist¿a, no se ha creado ninguna tabla.
+Sale por una excepcion: -2291  -- ORA-02291: integrity constraint (ABD1003.SYS_C0025246) violated - parent key not found
+ORA-06512: at
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Empresa 55           -- 00000002 -- 530007  -- bono3       -- 
+La secuencia secuencia_Empresa 55 ya exist¿a, no se ha creado ninguna secuencia.
+La tabla inversiones_Empresa 55 ya exist¿a, no se ha creado ninguna tabla.
+Sale por una excepcion: -2291  -- ORA-02291: integrity constraint (ABD1003.SYS_C0025246) violated - parent key not found
+ORA-06512: at
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Empresa 55           -- 00000002 -- 540007  -- bono4       -- 
+La secuencia secuencia_Empresa 33 ya exist¿a, no se ha creado ninguna secuencia.
+La tabla inversiones_Empresa 33 ya exist¿a, no se ha creado ninguna tabla.
+Sale por una excepcion: -2291  -- ORA-02291: integrity constraint (ABD1003.SYS_C0025246) violated - parent key not found
+ORA-06512: at
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Empresa 33           -- 00000003 -- 320000  -- bono2       -- 
+La secuencia secuencia_Empresa 55 ya exist¿a, no se ha creado ninguna secuencia.
+La tabla inversiones_Empresa 55 ya exist¿a, no se ha creado ninguna tabla.
+Sale por una excepcion: -2291  -- ORA-02291: integrity constraint (ABD1003.SYS_C0025246) violated - parent key not found
+ORA-06512: at
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Empresa 55           -- 00000003 -- 510000  -- bono1       -- 
+La secuencia secuencia_Empresa 22 ya exist¿a, no se ha creado ninguna secuencia.
+La tabla inversiones_Empresa 22 ya exist¿a, no se ha creado ninguna tabla.
+Sale por una excepcion: -2291  -- ORA-02291: integrity constraint (ABD1003.SYS_C0025246) violated - parent key not found
+ORA-06512: at
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Empresa 22           -- 00000004 -- 210000  -- bono1       -- BlackFri
+La secuencia secuencia_Empresa 22 ya exist¿a, no se ha creado ninguna secuencia.
+La tabla inversiones_Empresa 22 ya exist¿a, no se ha creado ninguna tabla.
+Sale por una excepcion: -2291  -- ORA-02291: integrity constraint (ABD1003.SYS_C0025246) violated - parent key not found
+ORA-06512: at
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Empresa 22           -- 00000004 -- 220000  -- bono2       -- BlackFri

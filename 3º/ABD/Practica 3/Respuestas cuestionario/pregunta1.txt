@@ -1,0 +1,121 @@
+Integrantes: Javier Rodríguez Prudencio y Daniel Fernández Ortiz
+
+
+Procedimiento RegalaComisiones      --- incluyendo Apdo_2__.    Apdo_2:_prac32 a.3),  RegalaComisiones, una sola versión que incluye b) c) y d) 
+
+Para que cuente tu respuesta:
+    - DEBES INCLUIR datos de la EJECUCIÓN: qué resultado ha dado, muestra cada tabla afectada 
+    - Debe estar compilado y ejecutado en el servidor Oracle de la Facultad
+
+(escribe AQUI tu RESPUESTA) 
+--------------------------------------------------
+
+----------  TRIGGER PRAC32 --------------------
+CREATE OR REPLACE TRIGGER PRAC32
+AFTER INSERT ON INVIERTE
+FOR EACH ROW
+BEGIN
+    -- este trigger llama al procedimiento autoRegalaComisiones
+    autoRegalaComisiones(:new.dni, :new.nombree, :new.tipo, :new.cantidad);
+END;
+
+------------ REGALACOMISIONES ---------------------
+
+create or replace PROCEDURE RegalaComisiones (
+    DNICliente IN NOTIFICACIONES.DNI_CLI%TYPE,
+    NombreE IN NOTIFICACIONES.NOMBREE%TYPE,
+    Tipo IN NOTIFICACIONES.TIPO%TYPE,
+    Cantidad invierte.cantidad%type
+) AS
+    v_space_left NUMBER;
+    v_table_exists NUMBER;
+    v_schema_name VARCHAR2(30);
+BEGIN
+    -- Loop a través de todos los usuarios de la base de datos que tienen tablas en ABD
+    FOR user_rec IN (SELECT DISTINCT OWNER FROM ALL_TABLES WHERE OWNER LIKE 'ABD%' AND TABLE_NAME LIKE '%NOTIFICACIONES') LOOP
+        -- Obtener el nombre del esquema del usuario actual
+        v_schema_name := user_rec.OWNER;
+
+        -- Verificar si existe la tabla Notificaciones para el usuario actual
+        SELECT COUNT(*) INTO v_table_exists FROM ALL_TABLES WHERE OWNER = v_schema_name AND TABLE_NAME = 'NOTIFICACIONES';
+
+        -- Si la tabla existe para este usuario
+        IF v_table_exists > 0 THEN
+            -- Obtener el espacio libre en el tablespace del usuario actual
+            SELECT SUM(blocks) INTO v_space_left FROM sys.dba_free_space WHERE tablespace_name = v_schema_name;
+
+            -- Verificar si el usuario tiene menos de 1800 bloques de espacio libre
+            IF v_space_left < 1800 THEN
+                -- Construir la consulta de inserción dinámica
+                EXECUTE IMMEDIATE 'INSERT INTO ' || v_schema_name || '.notificaciones (Usuario_Origen, Fecha, DNI_cli, NombreE, Tipo, Comision) ' ||
+                                  'VALUES (''ABDMITUIL'', SYSTIMESTAMP, :DNICliente, :NombreE, :Tipo, ' || Cantidad * 0.02 || ')'
+                USING DNICliente, NombreE, Tipo;
+            END IF;
+        END IF;
+    END LOOP;
+END RegalaComisiones;
+
+
+---------- TABLA Invierte -----------------
+00000003    EMPRESA11               10000    bono1         BlackFri
+00000002    Empresa 11              110000    bono1         GreenFri
+00000002    Empresa 22              220000    bono2         GreenFri
+00000002    Empresa 33              330000    bono3        
+00000002    Empresa 44              440000    bono4        
+00000002    Empresa 55              550000    bono5         BlackFri
+00000002    Empresa 55              520000    bono2        
+00000002    Empresa 55              530000    bono3        
+00000002    Empresa 55              540000    bono4        
+00000003    Empresa 33              320000    bono2        
+00000003    Empresa 55              510000    bono1        
+00000004    Empresa 22              210000    bono1         BlackFri
+00000004    Empresa 22              220000    bono2         BlackFri
+
+
+---------- TABLA Notificaciones  (al menos la tuya y la de otros tres usuarios diferentes) 
+Tabla ABD1003.NOTIFICACIONES
+ABD1003    21-MAR-24 12.08.06.320000000    00000004    Empresa 33              bono2         0.02
+ABDMITUIL    14-MAR-24 12.06.59.310000000    00000003    EMPRESA11               bono1         2
+ABDMITUIL    14-MAR-24 12.07.07.030000000    00000003    EMPRESA11               bono1         2
+ABDMITUIL    14-MAR-24 12.17.12.000000000    00000003    EMPRESA11               bono1         2
+ABD1008    21-MAR-24 12.38.42.050000000    00000002    Empresa 55              bono50        2469.12
+ABD9004    17-MAR-24 15.36.16.840000000    00000004    Empresa 44              joseTest40    1
+ABDMIUTIL    13-MAR-24 11.07.58.590000000    00000005    Empresa 55              prueba5       1
+ABD9004    17-MAR-24 15.44.29.770000000    00000004    Empresa 44              joseTest43    1
+ABD9004    17-MAR-24 16.32.30.670000000    00000004    Empresa 44              joseTest47    1
+ABD9004    17-MAR-24 16.32.30.700000000    00000004    Empresa 44              joseTest47    1
+ABD9004    17-MAR-24 16.38.50.890000000    00000004    Empresa 44              joseTest52    1
+ABD9004    17-MAR-24 16.38.50.920000000    00000004    Empresa 44              joseTest52    1
+ABD9004    17-MAR-24 16.38.51.060000000    00000004    Empresa 44              joseTest52    1
+ABD9004    17-MAR-24 17.02.34.670000000    00000004    Empresa 44              joseTest55    1
+ABD9004    17-MAR-24 17.02.34.770000000    00000004    Empresa 44              joseTest55    1
+ABD9004    17-MAR-24 17.02.34.800000000    00000004    Empresa 44              joseTest55    1
+ABD9004    17-MAR-24 18.04.29.030000000    00000004    Empresa 44              joseTest56    1
+ABD9004    17-MAR-24 18.04.29.050000000    00000004    Empresa 44              joseTest56    1
+ABD9004    17-MAR-24 18.05.25.750000000    00000004    Empresa 44              joseTest57    1
+ABD9004    17-MAR-24 18.09.22.390000000    00000004    Empresa 44              joseTest59    1
+ABD9004    17-MAR-24 18.09.22.590000000    00000004    Empresa 44              joseTest59    1
+ABD9004    17-MAR-24 18.25.10.750000000    00000004    Empresa 44              joseTest60    1
+ABD9004    17-MAR-24 18.25.10.920000000    00000004    Empresa 44              joseTest60    1
+ABD9004    17-MAR-24 18.25.10.950000000    00000004    Empresa 44              joseTest60    1
+ABD1012    02-APR-24 19.23.34.060000000    00000004    Empresa 33              bono2         4400
+ABDMITUIL    03-APR-24 17.03.36.320000000    00000005    Empresa 55              prueba5       55
+ABD1010    14-MAR-24 12.10.10.220000000    00000099    Empresa 11              bono2         1
+ABD1002    03-APR-24 17.40.00.000000000    00000001    Empresa 11              bonolotus     2200
+ABD1002    03-APR-24 17.57.19.000000000    00000002    Empresa 22              bononer       4400
+ABDMIUTIL    14-MAR-24 09.44.03.560000000    00000005    Empresa 55              prueba5       4
+ABD9004    17-MAR-24 01.13.31.060000000    00000003    Empresa 44              bonoJose      5
+ABD1008    21-MAR-24 12.23.18.240000000    00000002    Empresa 55              bono8         2220
+ABD_1112    03-APR-24 17.37.45.770000000    00000001    Empresa 22              bono1         2200
+----------
+Tabla ABD1001.NOTIFICACIONES
+ABD1001    21-MAR-24 12.08.06.320000000    00000004    Empresa 33              bono2         0.02
+ABD1012    02-APR-24 19.23.34.060000000    00000004    Empresa 33              bono2         4400
+ABD1010    14-MAR-24 12.10.10.230000000    00000099    Empresa 11              bono2         1000
+ABD1002    03-APR-24 17.40.00.000000000    00000001    Empresa 11              bonolotus     2200
+ABD1002    03-APR-24 17.57.19.000000000    00000002    Empresa 22              bononer       4400
+ABD9004    17-MAR-24 01.13.31.180000000    00000003    Empresa 44              bonoJose      8800
+
+
+
+

@@ -1,0 +1,32 @@
+¿Cómo funcionan los Savepoints,  Rollback y Pragma autonomous Transactions?
+
+** Savepoints: **
+
+- Un Savepoint es un marcador dentro de una transacción que permite guardar el estado de la misma para 
+poder volver a él más tarde si es necesario.
+
+- Se pueden utilizar para dividir una transacción en partes más pequeñas 
+  y deshacer solo una parte específica si ocurre un error.
+
+** Rollback: **
+- Rollback es un comando utilizado para deshacer una transacción,
+  revirtiendo todos los cambios realizados desde que comenzó la transacción.
+
+- Puede deshacer una transacción completa o hasta un punto específico marcado por un Savepoint.
+
+** Pragma autonomous Transactions: **
+
+La pragma AUTONOMOUS_TRANSACTION se utiliza para declarar un procedimiento o función como una transacción autónoma.
+Una transacción autónoma es independiente de la transacción principal que la invoca y
+puede realizar cambios en la base de datos de forma independiente.
+
+
+En resumen: 
+El trigg32 ejecuta una transaccion principal, asi que usaremos pragma AUTONOMOUS_TRANSACTION para hacerlo independiente del 
+trigger y no afectarlo.
+
+Usamos pragma AUTONOMOUS_TRANSACTION en 'RegalaComisiones_b' para ejecutar una transaccion independiente del trigger descrito 
+anteriormente, en este caso usaremos Savepoint en el caso de que un usuario no cumpla con los requisitos de comisiones_totales > 100
+en ese caso lanzaremos Rollback al Savepoint sin afectar a la transaccion autonoma y poder seguir ejecutando transacciones.
+En caso de que ocurrir un error inesperado lanzamos Rollback a todo. (catch) 
+En el caso de Rollback TO solo deshace lo de la iteracion actual

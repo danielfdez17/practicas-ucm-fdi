@@ -1,0 +1,19 @@
+e.- ¿Cuando terminan los bloqueos de tabla? 
+ 
+En el apartado anterior, el problema es que se quedan bloqueadas todas las tablas. ¿con que instrucciones lo 
+resuelves?. Es razonable resolverlo?
+
+Los bloqueos de tabla se liberan cuando se completa la transaccion que los establecio o cuando se emite
+explicitamente una instruccion para liberar el bloqueo.
+
+Para resolver el problema de que todas las tablas quedan bloqueadas, se pueden utilizar
+las instrucciones 'COMMIT' o 'ROLLBACK' para liberar los bloqueos de la transaccion actual. 
+
+Una solucion mas adecuada seria liberar selectivamente los bloqueos de tabla utilizando la instruccion 'UNLOCK TABLE' despues
+de haber completado las operaciones necesarias en las tablas. Esto permitira liberar los bloqueos de las tablas especificas que ya no son necesarias para
+la transaccion en curso, mientras que aun se mantienen los bloqueos en otras tablas que 
+aun se estan utilizando.
+A diferencia de COMMIT O Rollback que libera todos los bloqueos de tabla.
+
+En resumen es razonable resolver el problema liberando selectivamente los bloqueos de tabla cuando ya no son necesarios
+asi evitamos deadlock en tablas que ya no estemos usando.

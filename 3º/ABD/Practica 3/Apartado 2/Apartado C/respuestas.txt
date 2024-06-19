@@ -1,0 +1,10 @@
+c.- ¿ Cómo funcionan los Rollback? 
+
+En este caso se usan 2 SAVEPOINT + PRAGMA TRANSACTION
+    -> Rollback TO transaccion_iteration: Se lanzara cuando en una iteracion supere los 100 de suma de bloques solo afectaremos
+                                          a la transaccion del SAVEPOINT de transaccion_iteration no al de LOOP principal (El de los 3 intentos)
+    
+    -> Rollback TO transaccion_intento: Se lanzara cuando se superen los 1000 euros de comision se eliminara la transaccion del LOOP de los
+                                        intentos y el de las iteraciones (es decir es como si eliminara sus hijos).
+
+    -> Rollback: En caso de ocurrir un error inesperado lanzamos Rollback a todo anulando las transacciones de los 2 savepoint.

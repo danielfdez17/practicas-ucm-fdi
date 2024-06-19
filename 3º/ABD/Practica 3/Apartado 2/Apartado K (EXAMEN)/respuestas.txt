@@ -1,0 +1,41 @@
+k.- ¿Qué resultado dará cada situación descrita?: 
+ 
+k.1.- En este trozo de procedimiento: ¿qué sucede con el segundo rollback? 
+                  Comentas las posibles situaciones que se pueden dar según el valor de fallo1 y fallo2 
+ 
+            Savepoint SP1; 
+                  Proc-update1(); 
+            Savepoint SP2; 
+                   Proc-update2(); 
+            IF fallo1 then rollback savepoint SP1 end if; 
+            IF fallo2 then rollback savepoint SP2 end if;
+
+
+Distinguimos 4 casos:
+
+Si FALLO1 es verdadero y FALLO2 es FALSO
+ - Se ejecutara el ROLLBACK de SP1, lo que revierte los cambios realizados hasta el punto de guardado SP1
+ - Los cambios de SP2 se mantienen.
+
+Si FALLO1 es falso y FALLO2 es VERDADERO
+ - Los cambios de SP1 se mantienen
+ - Los cambios de SP2 no se mantienen se ejecuta ROLLBACK
+
+Si FALLO1 es verdadero y FALLO2 es verdadero
+ - Ningun cambio se guarda, ya que ambos ejecutan ROLLBACK
+
+Si FALLO1 es FALSO y FALLO2 es FALSO
+ - Ambos cambios se guardan ya que no se ejecuta ningun ROLLBACK
+
+
+
+k.2.- En este trozo de procedimiento: ¿qué sucede con el segundo rollback? 
+       
+              Savepoint SP1; 
+                Update  . . . . 
+                 Rollback; 
+                Update. . . . . 
+                Rollback to savepoint SP1; 
+
+Al realizarse un Rollback principal cancelara todo incluyendo el SP1, mostrara un mensaje de error
+"nunca se ha establecido el punto de grabación ''SP1'' en esta sesión o no es válido"

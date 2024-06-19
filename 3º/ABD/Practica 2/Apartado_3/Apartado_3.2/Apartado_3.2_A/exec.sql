@@ -1,0 +1,3 @@
+INSERT INTO INVERSIONES_EMPRESA22 (DNI, CANTIDAD, TIPO, CODOFERTA) VALUES ('00000002', 1000, 'bono1', 'desnorma');
+
+-- * FILA EN LA TABLA SumaEmpresa: Nombre: Empresa 22 ; Cantidad: 1000

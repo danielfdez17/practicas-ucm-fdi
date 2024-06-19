@@ -1,0 +1,19 @@
+- ¿Qué números de transacción da?  
+
+Trans. Principal Empieza: 8.9.27840
+ 
+ se ha dormido ->  antes:  0 despues: 0 Num.Trans.Secun: 1.21.25310
+ se ha dormido ->  antes:  1 despues: 1 Num.Trans.Secun: 10.25.27368
+
+Trans. Principal TERMINA: 8.9.27840
+
+
+- ¿Porqué hay varias transacciones?
+
+Debido a que estamos utilizando PRAGMA AUTONOMOUS_TRANSACTION(en pone_linea_autonoma.sql) esta es una transaccion autonoma esto 
+signfica que la transaccion dentro de este procedimiento es independiente de la transaccion principal que lo llama.
+Esto permite que las operaciones dentro de 'pone_linea_autonoma' se ejecuten en una transaccion separada
+y se confirmen o reviertan independiente de la transaccion principal.
+Este ademas establece un READ COMMITTED usando un SET TRANSACTION ISOLATION LEVEL. Ademas PRAGMA obliga a realizar COMMIT o ROLLBACK.
+
+

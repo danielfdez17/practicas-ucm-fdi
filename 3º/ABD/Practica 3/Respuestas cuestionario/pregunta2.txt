@@ -1,0 +1,28 @@
+
+----------------------------------------------------- 
+    - Debe estar compilado y ejecutado en el servidor Oracle de la Facultad
+
+(escribe AQUI tu RESPUESTA) 
+--------------------------------------------------
+------  APARTADO 2 g.1 ¿Qué poner en el prac32  
+g.1: para no anular la comision, aun haciendo rollback, lo unico que hay que hacer es añadir la sentencia PRAGMA AUTONOMOUS_TRANSACTION, lo que provoca que cada iteracion sea independiente
+         
+          
+
+
+
+
+
+------  APARTADO 2 g.2 ¿Qué poner en el prac32   
+            
+      g.2: En ORACLE 11 se puede establecer el orden en el que se ejecutan los triggers
+
+  - Sentencia PRECEDES: Indica que un trigger debe ejecutarse antes que otro trigger especificado.
+   En este caso, tr_anterior se ejecutará antes que prac32.
+
+  - Sentencia FOLLOWS: Indica que un trigger debe ejecutarse después que otro trigger especificado.
+   En este caso, pract32 se ejecutará después que tr_anterior.
+      
+
+       
+

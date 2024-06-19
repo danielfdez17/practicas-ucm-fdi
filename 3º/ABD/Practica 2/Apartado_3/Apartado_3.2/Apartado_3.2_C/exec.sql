@@ -1,0 +1,1 @@
+execute crear_triggers();

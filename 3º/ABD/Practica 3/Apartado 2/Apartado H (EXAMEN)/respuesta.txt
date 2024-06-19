@@ -1,0 +1,11 @@
+SERIALIZABLE:
+Recomendado serializable cuando:
+    - Grandes BDs con Transaccioness cortas y actualizan pocas filas.
+    - Baja probabilidad de que dos Transaccioness modifiquen la misma fila y que
+        la mayoria de las Transacciones, que se ejecutan mucho tiempo, son de lectura.
+        Se mejora si: se ponen primero las instrucciones que pueden colisionar
+    - Protege mejor de lecturas fantasma e irrepetibles cuando:
+        una Transaccion lee dos veces la misma fila.
+    - Garantiza la L.C. si una T tiene consultas con subconsultas
+    - NO es recomendable para entornos con muchos deadlocks
+        que provoquen muchos rollbacks y reintentos.

@@ -1,0 +1,37 @@
+j.- ¿Qué nivel de aislamiento u otro recurso aplicarías para estas situaciones?:
+    
+    READ COMMITTED : cuando commit la Transaccion autonoma, la T principal ve lo modificado por ella
+    SERIALIZABLE : cuando commit la Transaccion autonoma, la T principal NO ve lo modificado por ella
+
+j.1.-  Unas  transacciones  actualizan  la  tabla  ValoresBolsa.    Qué  nivel  de  aislamiento  se  necesita  en  otra  
+transacción para que vea cuanto antes los últimos cambios? ¿Harías algo en esas transacciones para que se vean los 
+cambios cuanto antes? . Explica el porqué.
+
+Nivel de aislamiento READ COMMITTED. Este nivel de aislamiento permite que una transaccion vea los cambios realizados por otras
+transacciones una vez que se han confirmado (committed).
+No es necesario realizar ninguna accion adicional en las transacciones que actualizan la tabla para que se vean los 
+cambios cuanto antes, ya que el nivel de aislamiento READ COMMITTED garantiza que las transacciones veran los cambios tan pronto
+como se confirmen.
+
+j.2.- Unas transacciones actualizan la tabla ControlPuerta, que puede estar abierta, cerrada o bloqueada. 
+¿Qué  harías  para  que  cada  transacción  vea  el  estado  inmediatamente  después  de  la  actualización  de  la  otra 
+transacción? Explica el porqué
+
+SERIALIZABLE, cada transaccion ve una version consistente de los datos y no permite que otras transacciones modifiquen los mismos
+datos hasta que se haya completado la transaccion actual. Por lo tanto, garantiza que cada transaccion vea el estado mas reciente de la 
+tabla 'ControlPuerta' inmediatamente despues de que la otra transaccion haya completado su trabajo, sin posibilidad de que se
+produzcan efectos indeseados debido a cambios concurrentes.
+
+j.3.- Unas transacciones actualizan la tabla MovtosVisa. Nuestra transacción hace el cierre fin de mes a las doce 
+de la noche del último día, contabiliza y marca cada movimiento como procesado. Y al final suma el total de los 
+movimientos marcados. Qué nivel de aislamiento necesitamos? Explica el porqué
+
+Ya que se realizan el cierre cada fin de mes podremos usar SERIALIZABLE para que los datos sean consistentes en toda la transaccion.
+
+
+j.4.- Unas transacciones actualizan la tabla MovtosVisa. Nuestra transacción solo lista los movimientos entre 
+dos fechas. Qué tipo de transacción definiremos para agilizar el proceso? Indica la instrucción.
+
+Al solo listar definiremos un tipo de transaccion READ COMMITTED, este nivel de aislamiento permite que una transaccion vea solo
+los cambios confirmados por otras transacciones, lo que garantiza una vision coherente de los datos sin bloquear el acceso a otras 
+transacciones.

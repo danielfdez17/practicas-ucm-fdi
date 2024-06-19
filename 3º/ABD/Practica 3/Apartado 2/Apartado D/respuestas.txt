@@ -1,0 +1,15 @@
+d.- ¿Cómo funcionan los bloqueos explícitos de tabla?
+
+Los bloqueos explícitos de tabla funcionan al permitir que un usuario bloquee una tabla específica de la base de datos
+para prevenir que otros usuarios realicen operaciones de lectura o escritura en ella durante un período de tiempo determinado. 
+Esto se hace utilizando la instrucción LOCK TABLE.
+
+En el contexto del procedimiento REGALACOMISIONES_D, se añadiría la instrucción LOCK TABLE para bloquear explícitamente 
+la tabla NOTIFICACIONES del usuario al que se está escribiendo, de modo que ningún otro usuario pueda leer o modificar 
+esta tabla mientras el proceso está en curso. 
+El bloqueo se mantiene hasta que la transacción en curso se completa o se revierte.
+
+La posibilidad de que se produzca un deadlock aumenta cuando varios usuarios intentan acceder a las mismas tablas al mismo tiempo 
+y se bloquean entre sí. Por ejemplo, si un usuario bloquea la tabla NOTIFICACIONES para escritura y otro usuario intenta acceder 
+a la misma tabla para escritura, se produce un deadlock cuando ambos usuarios esperan a que el otro libere el bloqueo 
+antes de poder continuar.

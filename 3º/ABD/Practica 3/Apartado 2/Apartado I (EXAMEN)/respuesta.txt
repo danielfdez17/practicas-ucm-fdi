@@ -1,0 +1,10 @@
+READ COMMIT:
+Recomendado READ COMMITED cuando:
+    - Si muchos usuarios concurrentes y tiempo de respuesta critico:
+        Compensar consistencia y concurrencia
+    - Si pocos usuarios concurrentes y pocas posibilidades de
+        lecturas fantasmas y lecturas irrepetibles.
+        Y ademas pocas transacciones necesiten esos tipos de lecturas.
+    - Permite
+        Respuesta mas rapida pero mas insegura
+        Mas concurrencia con cierto riesgo de lectura fantasma y lecturas irrepetibles
