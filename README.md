@@ -1,7 +1,6 @@
 # Primero
 + [Fundamentos de Computadores II](https://github.com/danielfdez17/FC2.git)
-<!-- + [Fundamentos de Programación II](https://github.com/danielfdez17/FP2.git) -->
-+ <a href="https://github.com/danielfdez17/FP2.git" target="_blank">Fundamentos de Programación II</a>
++ [Fundamentos de Programación II](https://github.com/danielfdez17/FP2.git)
 
 # Segundo
 + [Estructura de Datos](https://github.com/danielfdez17/ED.git)
