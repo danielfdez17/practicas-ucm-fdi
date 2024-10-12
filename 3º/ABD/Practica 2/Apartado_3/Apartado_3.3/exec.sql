@@ -1,1 +1,0 @@
-execute pru_tri_suma();

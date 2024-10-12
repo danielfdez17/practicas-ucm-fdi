@@ -1,1 +1,0 @@
-SELECT sec_trans_1.NEXTVAL FROM dual;    

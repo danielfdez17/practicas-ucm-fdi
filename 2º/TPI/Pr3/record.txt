@@ -1,4 +1,0 @@
-EASY : 30
-HARD : 0
-INSANE : 0
-INSANE : 100
