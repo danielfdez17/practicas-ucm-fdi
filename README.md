@@ -1,5 +1,5 @@
 # Primero
-+ [Fundamentos de Computadores II](https://github.com/danielfdez17/FC2.git)
++ [Fundamentos de Computadores II](https://github.com/danielfdez17/FC2.git){:target="_blank"}
 + [Fundamentos de Programación II](https://github.com/danielfdez17/FP2.git)
 
 # Segundo
