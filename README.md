@@ -20,7 +20,6 @@
 # Cuarto
 + [Aplicaciones Web](https://github.com/danielfdez17/AW.git)
 + [Ingeniería del Conocimiento](https://github.com/danielfdez17/IC.git)
-+ [Sistemas de Gestión de Empresas II](https://github.com/danielfdez17/SGEII.git)
 
 # Optativas
 + [Gestión de la Información en la Web](https://github.com/danielfdez17/GIW.git)
